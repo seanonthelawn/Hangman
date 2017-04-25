@@ -57,6 +57,14 @@ $(document).ready(function(){
 			guessArray = words[random];
 			$("#word").html(guessArray);
 			$("#badGuesses").html("6<BR>You lose, Refresh to try again.");
+		} else if(badGuessCount <= 6){
+			if(guessArray.join('') == words[random]) {
+				$("#badGuesses").html("You win, Refresh to try again.");
+				
+				
+			}
+			
+			
 		}
 	
 	});
