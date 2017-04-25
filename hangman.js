@@ -52,6 +52,12 @@ $(document).ready(function(){
 			
 		}
 		badGuessBool = true;
+		
+		if(badGuessCount >= 6){
+			guessArray = words[random];
+			$("#word").html(guessArray);
+			$("#badGuesses").html("6<BR>You lose, Refresh to try again.");
+		}
 	
 	});
 	
