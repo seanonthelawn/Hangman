@@ -1,6 +1,6 @@
 $(document).ready(function(){
 	
-	var words = new Array("HANGMAN","GAME","JAVASCRIPT");
+	var words = new Array("HANGMAN","GAME","JAVASCRIPT","BANANA", "SEAN", "APPLE", "KUMKWAT", "FUNCTION", "ADVENTURE", "CODING", "DOLPHIN", "HAMBURGER");
 	
 	var random = Math.floor((Math.random()*(words.length)));
 	
@@ -23,18 +23,17 @@ $(document).ready(function(){
 	$("#guess").click(function() {
 	
 	guessedChar = ($("#guessZone").val().toUpperCase())
-		if(badGuessCount<=6){
+		if(badGuessCount<6){
 			guessedArray.push($("#guessZone").val().toUpperCase())
 			$("#guessed").html(guessedArray);
 		
 			for(var i = 0; i<words[random].length+1; i++){
-				console.log($("#guessZone").val().toUpperCase());
-				console.log(words[random].charAt(i-1).toUpperCase());
+				
 				if($("#guessZone").val().toUpperCase() == words[random].charAt(i-1).toUpperCase()){
 					
-					console.log("Match: " + guessedChar);
+					
 					guessArray.splice(i-1,1,guessedChar);
-					console.log(guessArray);
+					
 					$("#word").html(guessArray);
 					badGuessBool = false;
 				} 
@@ -44,7 +43,7 @@ $(document).ready(function(){
 			
 			if(badGuessBool == true){
 				badGuessCount++;
-				console.log(badGuessCount);
+				
 				$("#badGuesses").html(badGuessCount);
 			}
 			
@@ -55,8 +54,5 @@ $(document).ready(function(){
 		badGuessBool = true;
 	
 	});
-	
-	
-	
 	
 });
